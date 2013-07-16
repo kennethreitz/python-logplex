@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 
 from datetime import datetime
-from packages import requests
+from .packages import requests
 
 
 DEFAULT_LOGPLEX_URL = 'https://east.logplex.io/logs'
 DEFAULT_LOGPLEX_TOKEN = None
+DETAULT_LOGPLEX_TIMEOUT = 2
 
 class Logplex(object):
     """A Logplex client."""
@@ -20,6 +21,7 @@ class Logplex(object):
         self.procid = 'python-logplex'
         self.msgid = '-'
         self.structured_data = '-'
+        self.timeout = DETAULT_LOGPLEX_TIMEOUT
         self.session = requests.session()
 
     def format_data(self, data):
@@ -44,4 +46,9 @@ class Logplex(object):
         headers = {'Content-Type': 'application/logplex-1'}
         data = self.format_data(s)
 
-        self.session.post(self.url, auth=auth, headers=headers, data=data)
+        self.session.post(self.url,
+            auth=auth,
+            headers=headers,
+            data=data,
+            timeout=self.timeout
+        )
