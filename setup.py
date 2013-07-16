@@ -29,7 +29,7 @@ from setuptools import setup
 setup(
     name='logplex',
     version='0.0.1',
-    url='https://github.com/kennethreitz/logplex',
+    url='https://github.com/kennethreitz/python-logplex',
     license='BSD',
     author='Kenneth Reitz',
     author_email='me@kennethreitz.com',
