@@ -33,7 +33,7 @@ setup(
     license='BSD',
     author='Kenneth Reitz',
     author_email='me@kennethreitz.com',
-    description='.',
+    description='A Logplex client for Python.',
     long_description=__doc__,
     packages=['logplex', 'logplex.packages', 'logplex.packages.requests'],
     zip_safe=False,
