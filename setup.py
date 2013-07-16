@@ -29,14 +29,22 @@ from setuptools import setup
 
 setup(
     name='logplex',
-    version='0.0.1',
+    version='0.0.2',
     url='https://github.com/kennethreitz/python-logplex',
     license='BSD',
     author='Kenneth Reitz',
     author_email='me@kennethreitz.com',
     description='A Logplex client for Python.',
     long_description=__doc__,
-    packages=['logplex', 'logplex.packages', 'logplex.packages.requests'],
+    packages=[
+        'logplex', 'logplex.packages', 'logplex.packages.requests',
+        'logplex.packages.requests.packages',
+        'logplex.packages.requests.packages.charade',
+        'logplex.packages.requests.packages.urllib3',
+        'logplex.packages.requests.packages.urllib3.packages',
+        'logplex.packages.requests.packages.urllib3.contrib',
+        'logplex.packages.requests.packages.urllib3.packages.ssl_match_hostname'
+    ],
     zip_safe=False,
     install_requires=['requests'],
     include_package_data=True,
