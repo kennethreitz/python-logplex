@@ -1,13 +1,12 @@
 # -*- coding: utf-8 -*-
 
 from datetime import datetime
-
 from packages import requests
+
 
 DEFAULT_LOGPLEX_URL = 'https://east.logplex.io/logs'
 DEFAULT_LOGPLEX_TOKEN = None
 
-# ttps://east.logplex.io/logs'
 class Logplex(object):
     """A Logplex client."""
 
