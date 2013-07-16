@@ -4,23 +4,25 @@ Python-Logplex
 ==============
 
 Python-Logplex is a fast & efficient client for sending log messages to
-Heroku's [Logplex project](github.com/heroku/logplex). It uses keep-alive
+Heroku's `Logplex project <github.com/heroku/logplex>`_. It uses keep-alive
 connections to enable high-throughput with little overhead.
 
 Usage
 -----
 
-Usage is fairly strait-forward::
+First, install the library.
 
     $ pip install logplex
 
-Configure your static assets in ``settings.py``::
+Then, send some sample data::
 
     from logplex import Logplex
 
     logplex = Logplex(token='SECRETSAUCE')
 
     logplex.puts('\o/')
+
+Enjoy!
 """
 
 from setuptools import setup
