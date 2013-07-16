@@ -46,13 +46,14 @@ class Logplex(object):
 
     def send_data(self, s):
 
-        auth = ('token', self.token)
-        headers = {'Content-Type': 'application/logplex-1'}
-        data = self.format_data(s)
+        if self.token:
+            auth = ('token', self.token)
+            headers = {'Content-Type': 'application/logplex-1'}
+            data = self.format_data(s)
 
-        self.session.post(self.url,
-            auth=auth,
-            headers=headers,
-            data=data,
-            timeout=self.timeout
-        )
+            self.session.post(self.url,
+                auth=auth,
+                headers=headers,
+                data=data,
+                timeout=self.timeout
+            )
