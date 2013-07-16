@@ -1,7 +1,11 @@
 # -*- coding: utf-8 -*-
 
 from datetime import datetime
-from .packages import requests
+
+try:
+    import requests
+except ImportError:
+    from .packages import requests
 
 
 DEFAULT_LOGPLEX_URL = 'https://east.logplex.io/logs'
