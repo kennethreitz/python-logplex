@@ -4,17 +4,21 @@ from datetime import datetime
 
 from packages import requests
 
+DEFAULT_LOGPLEX_URL = 'https://east.logplex.io/logs'
+DEFAULT_LOGPLEX_TOKEN = None
+
+# ttps://east.logplex.io/logs'
 class Logplex(object):
     """A Logplex client."""
 
     def __init__(self, token=None, url=None, timeout=2):
         super(Logplex, self).__init__()
 
-        self.url = url
-        self.token = token
+        self.url = url or DEFAULT_LOGPLEX_URL
+        self.token = token or DEFAULT_LOGPLEX_TOKEN
         self.timeout = timeout
         self.hostname = 'myhost'
-        self.procid = 'lpxc'
+        self.procid = 'python-logplex'
         self.msgid = '-'
         self.structured_data = '-'
         self.session = requests.session()
@@ -33,7 +37,12 @@ class Logplex(object):
 
 
     def puts(self, s):
+        self.send_data(s)
 
-        print s
-        print self.format_data(s)
+    def send_data(self, s):
 
+        auth = ('token', self.token)
+        headers = {'Content-Type': 'application/logplex-1'}
+        data = self.format_data(s)
+
+        self.session.post(self.url, auth=auth, headers=headers, data=data)
