@@ -10,7 +10,7 @@ connections to enable high-throughput with little overhead.
 Usage
 -----
 
-First, install the library.
+First, install the library::
 
     $ pip install logplex
 
