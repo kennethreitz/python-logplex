@@ -2,7 +2,7 @@ Python-Logplex
 ==============
 
 Python-Logplex is a fast & efficient client for sending log messages to
-Heroku's `Logplex project <github.com/heroku/logplex>`_. It uses keep-alive
+Heroku's `Logplex project <http://github.com/heroku/logplex>`_. It uses keep-alive
 connections to enable high-throughput with little overhead.
 
 Usage
