@@ -22,7 +22,6 @@ Then, send some sample data::
 
     logplex.puts('\o/')
 
-Enjoy!
 """
 
 from setuptools import setup
